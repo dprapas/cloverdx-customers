@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="dprapas" created="Fri Feb 04 12:50:24 EET 2022" guiVersion="5.13.1.3" id="1643977605859" licenseCode="CLP1DPRODY59836883EX" name="new-restjob" nature="restJob" showComponentDetails="true">
+<Global>
+<EndpointSettings>
+<UrlPath>/customers</UrlPath>
+<EndpointName>Get Customers</EndpointName>
+<RequestMethod name="GET"/>
+</EndpointSettings>
+<RestJobResponseStatus>
+<JobError>
+<ReasonPhrase>Job failed</ReasonPhrase>
+<StatusCode>500</StatusCode>
+</JobError>
+<Success>
+<StatusCode>200</StatusCode>
+</Success>
+<ValidationError>
+<ReasonPhrase>Request validation failed</ReasonPhrase>
+<StatusCode>400</StatusCode>
+</ValidationError>
+</RestJobResponseStatus>
+<Metadata id="Metadata0">
+<Record fieldDelimiter="|" name="requestEcho" recordDelimiter="\n" type="delimited">
+<Field name="requestBody" type="string"/>
+<Field name="requestClientIpAddress" type="string"/>
+<Field name="requestContentType" type="string"/>
+<Field name="requestEncoding" type="string"/>
+<Field name="requestHeaders" type="string"/>
+<Field name="requestMethod" type="string"/>
+<Field name="requestParameters" type="string"/>
+</Record>
+</Metadata>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node guiName="ExecuteGraph" guiX="386" guiY="124" id="EXECUTE_GRAPH" jobURL="${GRAPH_DIR}/graph-1.grf" type="EXECUTE_GRAPH"/>
+<Node guiName="Input" guiX="80" guiY="10" id="RESTJOB_INPUT0" requestFormat="BINARY" restJobInput="true" type="RESTJOB_INPUT"/>
+<Node attachment="false" guiName="Output" guiX="900" guiY="10" id="RESTJOB_OUTPUT0" metadataName="true" responseFormat="JSON" restJobOutput="true" topLevelArray="true" type="RESTJOB_OUTPUT"/>
+<Edge fromNode="EXECUTE_GRAPH:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="RESTJOB_OUTPUT0:0"/>
+</Phase>
+</Graph>
